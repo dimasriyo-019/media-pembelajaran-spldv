@@ -1,0 +1,276 @@
+:root {
+    --primary: #1c2541;
+    --primary-dark: #0b132b;
+    --accent: #ffd166;
+    --accent-hover: #f4a261;
+    --bg-main: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --border-color: #cbd5e1;
+}
+
+Body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+header {
+     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+header p {
+    margin: 0;
+    color: #93c5fd;
+    font-size: 1.05rem;
+}
+
+nav {
+    background-color: var(--primary-dark);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 14px 22px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+ 
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--primary);
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+}
+
+main {
+    width: 85%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.card, section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-top: 5px solid var(--primary);
+}
+
+h2 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: var(--primary);
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: 11px 15px;
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.btn, button[type="submit"] {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 11px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 8px;
+    margin-top: 10px;
+}
+
+.btn:hover, button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #64748b;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+}
+
+.btn-detail {
+    background-color: #3a506b;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.btn-detail {
+    background-color: var(--primary);
+    color: var(--accent);
+}
+
+.formula-box, .example-box {
+    background-color: #f1f5f9;
+    border-left: 4px solid var(--primary);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.soal-container {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+}
+
+.nomor-soal {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.isi-soal {
+    margin-left: 10px;
+}
+
+.opsi-jawaban {
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.opsi-jawaban label {
+    display: block;
+    margin: 6px 0;
+    padding: 8px 12px;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.opsi-jawaban label:hover {
+    background-color: #e2e8f0;
+}
+
+details.terkunci {
+    pointer-events: none;
+    opacity: 0.6;
+    filter: blur(1px);
+    transition: all 0.3s ease;
+}
+
+.area-pembahasan {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f8fafc;
+    border-left: 4px solid var(--primary);
+    border-radius: 0 6px 6px 6px;
+}
+
+.benar {
+    background-color: #dcfce7 !important;
+    border-color: #22c55e !important;
+    color: #15803d;
+    font-weight: bold;
+}
+
+.salah {
+    background-color: #fee2e2 !important;
+    border-color: #ef4444 !important;
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+.info-skor {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+footer {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

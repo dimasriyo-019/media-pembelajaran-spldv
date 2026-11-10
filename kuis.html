@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Evaluasi SPLDV | SMP Kelas VIII</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        details.terkunci {
+            pointer-events: none;
+            opacity: 0.6;
+            filter: blur(1px);
+            transition: all 0.3s ease;
+        }
+        .area-pembahasan ol {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        .area-pembahasan li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body id="atas">
+    <header>
+        <h1>Kuis Evaluasi Matematika: SPLDV</h1>
+        <p>15 Soal Pilihan Ganda (Metode Grafik, Substitusi, Eliminasi, &amp; Soal Cerita)</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="materi.html">Materi</a></li>
+            <li><a href="kuis.html" class="active">Kuis</a></li>
+            <li><a href="profil.html">Profil Pengembang</a></li>
+            <li><a href="referensi.html">Referensi</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Uji Pemahaman SPLDV</h2>
+            <p>Pilihlah jawaban yang paling tepat, lalu klik tombol <strong>Kirim &amp; Periksa Jawaban</strong> untuk melihat skor serta membuka pembahasan lengkapnya.</p>
+            
+            <div id="hasilSkor"></div>
+
+            <form id="formkuis" onsubmit="periksaKuis(event)">
+
+                <h3>Bagian A: Konsep Dasar &amp; Grafik (Tingkat Mudah)</h3>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>1. [Topik: Konsep SPLDV | Tingkat: Mudah]</strong></div>
+                    <div class="isi-soal">
+                        <div>Manakah di bawah ini yang merupakan contoh persamaan linear dua variabel?</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q1-A"><input type="radio" name="q1" value="A"> A. <i>x</i>&sup2; + <i>y</i> = 5</label>
+                            <label id="lbl-q1-B"><input type="radio" name="q1" value="B"> B. 2<i>x</i> + 3<i>y</i> = 12</label>
+                            <label id="lbl-q1-C"><input type="radio" name="q1" value="C"> C. 3<i>x</i> &minus; 4 = 8</label>
+                            <label id="lbl-q1-D"><input type="radio" name="q1" value="D"> D. <i>x + y + z</i> = 10</label>
+                        </div>
+                        <details id="detail-q1"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li>Persamaan linear dua variabel harus memiliki tepat <strong>2 variabel</strong> yang masing-masing berpangkat satu.</li>
+                                    <li>Opsi B (2<i>x</i> + 3<i>y</i> = 12) memenuhi syarat tersebut karena memiliki variabel <i>x</i> dan <i>y</i> berpangkat 1.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>2. [Topik: Metode Grafik | Tingkat: Mudah]</strong></div>
+                    <div class="isi-soal">
+                        <div>Titik potong dari dua garis lurus pada grafik SPLDV menunjukkan...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q2-A"><input type="radio" name="q2" value="A"> A. Himpunan penyelesaian</label>
+                            <label id="lbl-q2-B"><input type="radio" name="q2" value="B"> B. Gradien garis</label>
+                            <label id="lbl-q2-C"><input type="radio" name="q2" value="C"> C. Konstanta persamaan</label>
+                            <label id="lbl-q2-D"><input type="radio" name="q2" value="D"> D. Koefisien variabel</label>
+                        </div>
+                        <details id="detail-q2"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: A</strong></p>
+                                <ol>
+                                    <li>Setiap titik pada garis mewakili pasangan (<i>x</i>, <i>y</i>) yang memenuhi persamaan garis tersebut.</li>
+                                    <li>Koordinat titik potong (<i>x</i>, <i>y</i>) memenuhi kedua persamaan sekaligus sehingga disebut <strong>himpunan penyelesaian</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>3. [Topik: Metode Grafik | Tingkat: Mudah]</strong></div>
+                    <div class="isi-soal">
+                        <div>Jika dua garis pada grafik SPLDV saling sejajar dan tidak pernah berpotongan, maka sistem tersebut...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q3-A"><input type="radio" name="q3" value="A"> A. Memiliki tepat satu penyelesaian</label>
+                            <label id="lbl-q3-B"><input type="radio" name="q3" value="B"> B. Memiliki dua penyelesaian</label>
+                            <label id="lbl-q3-C"><input type="radio" name="q3" value="C"> C. Tidak memiliki penyelesaian</label>
+                            <label id="lbl-q3-D"><input type="radio" name="q3" value="D"> D. Memiliki tak hingga penyelesaian</label>
+                        </div>
+                        <details id="detail-q3"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: C</strong></p>
+                                <ol>
+                                    <li>Dua garis yang sejajar tidak akan pernah bertemu di satu titik mana pun.</li>
+                                    <li>Karena tidak ada titik potong, maka himpunan penyelesaiannya kosong (tidak memiliki penyelesaian).</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>4. [Topik: Metode Substitusi | Tingkat: Mudah]</strong></div>
+                    <div class="isi-soal">
+                        <div>Diketahui <i>x + y</i> = 9 dan <i>y</i> = 2<i>x</i>. Nilai <i>x</i> yang memenuhi adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q4-A"><input type="radio" name="q4" value="A"> A. 2</label>
+                            <label id="lbl-q4-B"><input type="radio" name="q4" value="B"> B. 3</label>
+                            <label id="lbl-q4-C"><input type="radio" name="q4" value="C"> C. 4</label>
+                            <label id="lbl-q4-D"><input type="radio" name="q4" value="D"> D. 6</label>
+                        </div>
+                        <details id="detail-q4"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li><strong>Substitusi:</strong> Ganti <i>y</i> dengan 2<i>x</i> pada persamaan pertama: <i>x</i> + 2<i>x</i> = 9</li>
+                                    <li><strong>Hitung:</strong> 3<i>x</i> = 9 &rarr; <strong><i>x</i> = 3</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>5. [Topik: Metode Eliminasi | Tingkat: Mudah]</strong></div>
+                    <div class="isi-soal">
+                        <div>Diketahui <i>x + y</i> = 10 dan <i>x &minus; y</i> = 2. Nilai <i>x</i> yang memenuhi adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q5-A"><input type="radio" name="q5" value="A"> A. 4</label>
+                            <label id="lbl-q5-B"><input type="radio" name="q5" value="B"> B. 6</label>
+                            <label id="lbl-q5-C"><input type="radio" name="q5" value="C"> C. 8</label>
+                            <label id="lbl-q5-D"><input type="radio" name="q5" value="D"> D. 10</label>
+                        </div>
+                        <details id="detail-q5"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li><strong>Eliminasi <i>y</i>:</strong> Jumlahkan kedua persamaan:<br>
+                                    (<i>x + y</i>) + (<i>x &minus; y</i>) = 10 + 2</li>
+                                    <li><strong>Hitung:</strong> 2<i>x</i> = 12 &rarr; <strong><i>x</i> = 6</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <h3>Bagian B: Perhitungan Aljabar (Tingkat Sedang)</h3>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>6. [Topik: Metode Eliminasi | Tingkat: Sedang]</strong></div>
+                    <div class="isi-soal">
+                        <div>Himpunan penyelesaian dari 2<i>x + y</i> = 8 dan <i>x &minus; y</i> = 1 adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q6-A"><input type="radio" name="q6" value="A"> A. {(3, 2)}</label>
+                            <label id="lbl-q6-B"><input type="radio" name="q6" value="B"> B. {(2, 3)}</label>
+                            <label id="lbl-q6-C"><input type="radio" name="q6" value="C"> C. {(3, 4)}</label>
+                            <label id="lbl-q6-D"><input type="radio" name="q6" value="D"> D. {(4, 0)}</label>
+                        </div>
+                        <details id="detail-q6"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: A</strong></p>
+                                <ol>
+                                    <li><strong>Langkah 1 (Eliminasi <i>y</i>):</strong> Jumlahkan kedua persamaan:<br>
+                                    (2<i>x + y</i>) + (<i>x &minus; y</i>) = 8 + 1 &rarr; 3<i>x</i> = 9 &rarr; <strong><i>x</i> = 3</strong>.</li>
+                                    <li><strong>Langkah 2 (Substitusi):</strong> Masukkan <i>x</i> = 3 ke <i>x &minus; y</i> = 1:<br>
+                                    3 &minus; <i>y</i> = 1 &rarr; <strong><i>y</i> = 2</strong>.</li>
+                                    <li><strong>Kesimpulan:</strong> Himpunan penyelesaiannya adalah <strong>{(3, 2)}</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>7. [Topik: Metode Substitusi | Tingkat: Sedang]</strong></div>
+                    <div class="isi-soal">
+                        <div>Jika 3<i>x</i> &minus; 2<i>y</i> = 12 dan <i>x</i> = 2<i>y</i>, maka nilai <i>y</i> yang memenuhi adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q7-A"><input type="radio" name="q7" value="A"> A. 2</label>
+                            <label id="lbl-q7-B"><input type="radio" name="q7" value="B"> B. 3</label>
+                            <label id="lbl-q7-C"><input type="radio" name="q7" value="C"> C. 4</label>
+                            <label id="lbl-q7-D"><input type="radio" name="q7" value="D"> D. 6</label>
+                        </div>
+                        <details id="detail-q7"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li><strong>Substitusi <i>x</i> = 2<i>y</i>:</strong> 3(2<i>y</i>) &minus; 2<i>y</i> = 12</li>
+                                    <li><strong>Hitung:</strong> 6<i>y</i> &minus; 2<i>y</i> = 12 &rarr; 4<i>y</i> = 12 &rarr; <strong><i>y</i> = 3</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>8. [Topik: Metode Gabungan | Tingkat: Sedang]</strong></div>
+                    <div class="isi-soal">
+                        <div>Nilai <i>x + y</i> yang memenuhi sistem 2<i>x</i> + 3<i>y</i> = 13 dan <i>x &minus; y</i> = &minus;1 adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q8-A"><input type="radio" name="q8" value="A"> A. 3</label>
+                            <label id="lbl-q8-B"><input type="radio" name="q8" value="B"> B. 4</label>
+                            <label id="lbl-q8-C"><input type="radio" name="q8" value="C"> C. 5</label>
+                            <label id="lbl-q8-D"><input type="radio" name="q8" value="D"> D. 6</label>
+                        </div>
+                        <details id="detail-q8"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: C</strong></p>
+                                <ol>
+                                    <li><strong>Ubah persamaan kedua:</strong> <i>x = y</i> &minus; 1.</li>
+                                    <li><strong>Substitusi ke persamaan pertama:</strong> 2(<i>y</i> &minus; 1) + 3<i>y</i> = 13 &rarr; 2<i>y</i> &minus; 2 + 3<i>y</i> = 13 &rarr; 5<i>y</i> = 15 &rarr; <strong><i>y</i> = 3</strong>.</li>
+                                    <li><strong>Cari nilai <i>x</i>:</strong> <i>x</i> = 3 &minus; 1 = <strong>2</strong>.</li>
+                                    <li><strong>Hitung <i>x + y</i>:</strong> 2 + 3 = <strong>5</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>9. [Topik: Soal Cerita | Tingkat: Sedang]</strong></div>
+                    <div class="isi-soal">
+                        <div>Harga 3 kg apel dan 2 kg jeruk adalah Rp65.000,00. Jika harga 1 kg jeruk Rp10.000,00, maka harga 1 kg apel adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q9-A"><input type="radio" name="q9" value="A"> A. Rp12.000,00</label>
+                            <label id="lbl-q9-B"><input type="radio" name="q9" value="B"> B. Rp15.000,00</label>
+                            <label id="lbl-q9-C"><input type="radio" name="q9" value="C"> C. Rp18.000,00</label>
+                            <label id="lbl-q9-D"><input type="radio" name="q9" value="D"> D. Rp20.000,00</label>
+                        </div>
+                        <details id="detail-q9"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li><strong>Model matematika:</strong> 3<i>a</i> + 2<i>j</i> = 65.000, dengan <i>j</i> = 10.000.</li>
+                                    <li><strong>Substitusi:</strong> 3<i>a</i> + 2(10.000) = 65.000 &rarr; 3<i>a</i> + 20.000 = 65.000.</li>
+                                    <li><strong>Hitung:</strong> 3<i>a</i> = 45.000 &rarr; <strong><i>a</i> = Rp15.000,00</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>10. [Topik: Soal Cerita | Tingkat: Sedang]</strong></div>
+                    <div class="isi-soal">
+                        <div>Jumlah dua bilangan adalah 25 dan selisihnya 7. Bilangan terbesar dari kedua bilangan tersebut adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q10-A"><input type="radio" name="q10" value="A"> A. 9</label>
+                            <label id="lbl-q10-B"><input type="radio" name="q10" value="B"> B. 14</label>
+                            <label id="lbl-q10-C"><input type="radio" name="q10" value="C"> C. 16</label>
+                            <label id="lbl-q10-D"><input type="radio" name="q10" value="D"> D. 18</label>
+                        </div>
+                        <details id="detail-q10"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: C</strong></p>
+                                <ol>
+                                    <li><strong>Model matematika:</strong> <i>x + y</i> = 25 dan <i>x &minus; y</i> = 7 (dengan <i>x</i> bilangan terbesar).</li>
+                                    <li><strong>Eliminasi <i>y</i>:</strong> Jumlahkan kedua persamaan: 2<i>x</i> = 32 &rarr; <strong><i>x</i> = 16</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <h3>Bagian C: Soal Cerita &amp; HOTS (Tingkat: Sulit)</h3>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>11. [Topik: Soal Cerita / HOTS | Tingkat: Sulit]</strong></div>
+                    <div class="isi-soal">
+                        <div>Di sebuah tempat parkir terdapat 40 kendaraan yang terdiri dari sepeda motor dan mobil. Jumlah seluruh roda kendaraan adalah 110 buah. Banyaknya mobil di tempat parkir tersebut adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q11-A"><input type="radio" name="q11" value="A"> A. 15 mobil</label>
+                            <label id="lbl-q11-B"><input type="radio" name="q11" value="B"> B. 20 mobil</label>
+                            <label id="lbl-q11-C"><input type="radio" name="q11" value="C"> C. 25 mobil</label>
+                            <label id="lbl-q11-D"><input type="radio" name="q11" value="D"> D. 30 mobil</label>
+                        </div>
+                        <details id="detail-q11"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: A</strong></p>
+                                <ol>
+                                    <li><strong>Model matematika:</strong> Misal motor = <i>m</i>, mobil = <i>b</i>.<br>
+                                    <i>m + b</i> = 40 &nbsp;dan&nbsp; 2<i>m</i> + 4<i>b</i> = 110.</li>
+                                    <li><strong>Eliminasi <i>m</i>:</strong> Kalikan persamaan pertama dengan 2 menjadi 2<i>m</i> + 2<i>b</i> = 80.</li>
+                                    <li><strong>Kurangkan:</strong> (2<i>m</i> + 4<i>b</i>) &minus; (2<i>m</i> + 2<i>b</i>) = 110 &minus; 80 &rarr; 2<i>b</i> = 30 &rarr; <strong><i>b</i> = 15 mobil</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>12. [Topik: Soal Cerita / HOTS | Tingkat: Sulit]</strong></div>
+                    <div class="isi-soal">
+                        <div>Keliling sebuah persegi panjang adalah 44 cm. Jika panjangnya 6 cm lebih dari lebarnya, maka luas persegi panjang tersebut adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q12-A"><input type="radio" name="q12" value="A"> A. 96 cm&sup2;</label>
+                            <label id="lbl-q12-B"><input type="radio" name="q12" value="B"> B. 112 cm&sup2;</label>
+                            <label id="lbl-q12-C"><input type="radio" name="q12" value="C"> C. 120 cm&sup2;</label>
+                            <label id="lbl-q12-D"><input type="radio" name="q12" value="D"> D. 132 cm&sup2;</label>
+                        </div>
+                        <details id="detail-q12"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: B</strong></p>
+                                <ol>
+                                    <li><strong>Persamaan keliling:</strong> 2(<i>p + l</i>) = 44 &rarr; <i>p + l</i> = 22.</li>
+                                    <li><strong>Persamaan selisih:</strong> <i>p &minus; l</i> = 6.</li>
+                                    <li><strong>Eliminasi:</strong> Jumlahkan keduanya: 2<i>p</i> = 28 &rarr; <i>p</i> = 14 cm, maka <i>l</i> = 22 &minus; 14 = 8 cm.</li>
+                                    <li><strong>Luas:</strong> <i>p &times; l</i> = 14 &times; 8 = <strong>112 cm&sup2;</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>13. [Topik: Soal Cerita / HOTS | Tingkat: Sulit]</strong></div>
+                    <div class="isi-soal">
+                        <div>Harga 4 buku dan 3 pulpen adalah Rp23.500,00, sedangkan harga 2 buku dan 5 pulpen adalah Rp20.500,00. Harga 1 buku dan 1 pulpen adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q13-A"><input type="radio" name="q13" value="A"> A. Rp5.500,00</label>
+                            <label id="lbl-q13-B"><input type="radio" name="q13" value="B"> B. Rp6.000,00</label>
+                            <label id="lbl-q13-C"><input type="radio" name="q13" value="C"> C. Rp6.500,00</label>
+                            <label id="lbl-q13-D"><input type="radio" name="q13" value="D"> D. Rp7.000,00</label>
+                        </div>
+                        <details id="detail-q13"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: C</strong></p>
+                                <ol>
+                                    <li><strong>Model matematika:</strong> 4<i>b</i> + 3<i>p</i> = 23.500 dan 2<i>b</i> + 5<i>p</i> = 20.500.</li>
+                                    <li><strong>Eliminasi <i>b</i>:</strong> Kalikan persamaan kedua dengan 2 menjadi 4<i>b</i> + 10<i>p</i> = 41.000.</li>
+                                    <li><strong>Kurangkan:</strong> 7<i>p</i> = 17.500 &rarr; <i>p</i> = 2.500.</li>
+                                    <li><strong>Substitusi:</strong> 2<i>b</i> + 5(2.500) = 20.500 &rarr; 2<i>b</i> = 8.000 &rarr; <i>b</i> = 4.000.</li>
+                                    <li><strong>Total:</strong> <i>b + p</i> = 4.000 + 2.500 = <strong>Rp6.500,00</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>14. [Topik: Soal Cerita / HOTS | Tingkat: Sulit]</strong></div>
+                    <div class="isi-soal">
+                        <div>Umur Ani 4 tahun lebih tua dari umur Budi. Lima tahun yang akan datang, jumlah umur mereka adalah 38 tahun. Umur Ani sekarang adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q14-A"><input type="radio" name="q14" value="A"> A. 12 tahun</label>
+                            <label id="lbl-q14-B"><input type="radio" name="q14" value="B"> B. 14 tahun</label>
+                            <label id="lbl-q14-C"><input type="radio" name="q14" value="C"> C. 16 tahun</label>
+                            <label id="lbl-q14-D"><input type="radio" name="q14" value="D"> D. 18 tahun</label>
+                        </div>
+                        <details id="detail-q14"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: C</strong></p>
+                                <ol>
+                                    <li><strong>Persamaan 1:</strong> <i>A = B</i> + 4.</li>
+                                    <li><strong>Persamaan 2:</strong> (<i>A</i> + 5) + (<i>B</i> + 5) = 38 &rarr; <i>A + B</i> = 28.</li>
+                                    <li><strong>Substitusi:</strong> (<i>B</i> + 4) + <i>B</i> = 28 &rarr; 2<i>B</i> = 24 &rarr; <i>B</i> = 12 tahun.</li>
+                                    <li><strong>Umur Ani:</strong> <i>A</i> = 12 + 4 = <strong>16 tahun</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="soal-container">
+                    <div class="nomor-soal"><strong>15. [Topik: Aljabar SPLDV / HOTS | Tingkat: Sulit]</strong></div>
+                    <div class="isi-soal">
+                        <div>Jika (<i>x</i>, <i>y</i>) adalah penyelesaian dari 3<i>x</i> + 2<i>y</i> = 12 dan 2<i>x &minus; y</i> = 1, maka nilai dari 5<i>x</i> &minus; 3<i>y</i> adalah...</div>
+                        <div class="opsi-jawaban">
+                            <label id="lbl-q15-A"><input type="radio" name="q15" value="A"> A. 1</label>
+                            <label id="lbl-q15-B"><input type="radio" name="q15" value="B"> B. 2</label>
+                            <label id="lbl-q15-C"><input type="radio" name="q15" value="C"> C. 4</label>
+                            <label id="lbl-q15-D"><input type="radio" name="q15" value="D"> D. 7</label>
+                        </div>
+                        <details id="detail-q15"><summary style="cursor:pointer;color:#1e3a8a;font-weight:bold;">Lihat Pembahasan</summary>
+                            <div class="area-pembahasan">
+                                <p><strong>Kunci: A</strong></p>
+                                <ol>
+                                    <li><strong>Ubah persamaan kedua:</strong> <i>y</i> = 2<i>x</i> &minus; 1.</li>
+                                    <li><strong>Substitusi:</strong> 3<i>x</i> + 2(2<i>x</i> &minus; 1) = 12 &rarr; 7<i>x</i> &minus; 2 = 12 &rarr; 7<i>x</i> = 14 &rarr; <strong><i>x</i> = 2</strong>.</li>
+                                    <li><strong>Cari nilai <i>y</i>:</strong> <i>y</i> = 2(2) &minus; 1 = <strong>3</strong>.</li>
+                                    <li><strong>Hitung 5<i>x</i> &minus; 3<i>y</i>:</strong> 5(2) &minus; 3(3) = 10 &minus; 9 = <strong>1</strong>.</li>
+                                </ol>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button type="submit" class="btn">Kirim &amp; Periksa Jawaban</button>
+                    <button type="button" class="btn btn-secondary" onclick="resetKuis()">Reset Kuis</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dimas Riyo Bagas Saputra (NIM: 202510060110019) &mdash; Pendidikan Matematika, UMM</p>
+        <p><a href="#atas">Kembali ke Atas</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('#formkuis details').forEach(detil => {
+                detil.classList.add('terkunci');
+            });
+        });
+
+        function periksaKuis(event) {
+            event.preventDefault();
+            const kunci = {
+                q1:'B', q2:'A', q3:'C', q4:'B', q5:'B',
+                q6:'A', q7:'B', q8:'C', q9:'B', q10:'C',
+                q11:'A', q12:'B', q13:'C', q14:'C', q15:'A'
+            };
+            let skor = 0;
+            for (let i = 1; i <= 15; i++) {
+                let jawab = document.querySelector(`input[name="q${i}"]:checked`);
+                let val = jawab ? jawab.value : null;
+                ['A', 'B', 'C', 'D'].forEach(opsi => {
+                    let lbl = document.getElementById(`lbl-q${i}-${opsi}`);
+                    if (lbl) {
+                        lbl.classList.remove('benar', 'salah');
+                        if (opsi === kunci[`q${i}`]) lbl.classList.add('benar');
+                        if (val && val === opsi && opsi !== kunci[`q${i}`]) lbl.classList.add('salah');
+                    }
+                });
+                if (val && val === kunci[`q${i}`]) skor++;
+            }
+
+            document.querySelectorAll('#formkuis details').forEach(detil => {
+                detil.classList.remove('terkunci');
+                detil.open = true;
+            });
+
+            let nilaiAkhir = (skor / 15) * 100;
+            document.getElementById('hasilSkor').innerHTML = `
+                <div class="info-skor">
+                    🎉 <strong>Evaluasi Selesai!</strong><br>
+                    Jawaban Benar: ${skor} dari 15 soal (${nilaiAkhir.toFixed(0)} Poin).
+                </div>`;
+        }
+
+        function resetKuis() {
+            document.getElementById('formkuis').reset();
+            document.getElementById('hasilSkor').innerHTML = '';
+            for (let i = 1; i <= 15; i++) {
+                ['A', 'B', 'C', 'D'].forEach(opsi => {
+                    let lbl = document.getElementById(`lbl-q${i}-${opsi}`);
+                    if (lbl) lbl.classList.remove('benar', 'salah');
+                });
+            }
+
+            document.querySelectorAll('#formkuis details').forEach(detil => {
+                detil.classList.add('terkunci');
+                detil.open = false;
+            });
+        }
+    </script>
+</body>
+</html>
